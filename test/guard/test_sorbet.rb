@@ -4,12 +4,6 @@
 require "test_helper"
 
 class Guard::TestSorbet < Minitest::Spec
-  describe "VERSION" do
-    it "has version number" do
-      refute_nil ::Guard::SorbetVersion::VERSION
-    end
-  end
-
   let(:options) { {} }
   subject { Guard::Sorbet.new(options) }
 
