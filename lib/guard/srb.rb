@@ -2,14 +2,14 @@
 # frozen_string_literal: true
 
 require "guard/plugin"
-require "guard/sorbet/version"
+require "guard/srb/version"
 require "sorbet-runtime"
 
 module Guard
-  class Sorbet < Plugin
+  class Srb < Plugin
     extend T::Sig
 
-    autoload :Runner, "guard/sorbet/runner"
+    autoload :Runner, "guard/srb/runner"
 
     DEFAULT_OPTIONS = T.let(
       {
@@ -67,7 +67,7 @@ module Guard
 
       throw :task_has_failed unless passed
     rescue StandardError => e
-      UI.error "The following exception occurred while running guard-sorbet: " \
+      UI.error "The following exception occurred while running guard-srb: " \
                "#{T.must(e.backtrace).first} #{e.message} (#{e.class.name})"
     end
 

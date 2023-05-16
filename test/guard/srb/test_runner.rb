@@ -3,8 +3,8 @@
 
 require "test_helper"
 
-class Guard::Sorbet::TestRunner < Minitest::Spec
-  let(:runner) { Guard::Sorbet::Runner.new(options) }
+class Guard::Srb::TestRunner < Minitest::Spec
+  let(:runner) { Guard::Srb::Runner.new(options) }
   let(:options) { {} }
   let(:success_status) { stub(success?: true) }
   let(:failure_status) { stub(success?: false) }

@@ -3,9 +3,9 @@
 
 require "test_helper"
 
-class Guard::TestSorbet < Minitest::Spec
+class Guard::TestSrb < Minitest::Spec
   let(:options) { {} }
-  subject { Guard::Sorbet.new(options) }
+  subject { Guard::Srb.new(options) }
 
   describe "#options" do
     describe "by default" do
@@ -44,10 +44,10 @@ class Guard::TestSorbet < Minitest::Spec
   end
 
   describe "#run_all" do
-    subject { Guard::Sorbet.new(options).run_all }
+    subject { Guard::Srb.new(options).run_all }
 
     it "inspects all files with rubocop" do
-      Guard::Sorbet::Runner.any_instance.expects(:run).with([]).returns(true)
+      Guard::Srb::Runner.any_instance.expects(:run).with([]).returns(true)
 
       assert_output do
         subject
@@ -56,7 +56,7 @@ class Guard::TestSorbet < Minitest::Spec
 
     describe "when passed" do
       it "throws nothing" do
-        Guard::Sorbet::Runner.any_instance.expects(:run).returns(true)
+        Guard::Srb::Runner.any_instance.expects(:run).returns(true)
         assert_output do
           subject
         end
@@ -65,7 +65,7 @@ class Guard::TestSorbet < Minitest::Spec
 
     describe "when failed" do
       it "throws symbol :task_has_failed" do
-        Guard::Sorbet::Runner.any_instance.expects(:run).returns(false)
+        Guard::Srb::Runner.any_instance.expects(:run).returns(false)
         assert_throws(:task_has_failed) do
           assert_output do
             subject
@@ -76,7 +76,7 @@ class Guard::TestSorbet < Minitest::Spec
 
     describe "when an exception is raised" do
       it "prevents itself from firing" do
-        Guard::Sorbet::Runner.any_instance.expects(:run).raises(RuntimeError)
+        Guard::Srb::Runner.any_instance.expects(:run).raises(RuntimeError)
         assert_output do
           subject
         end
@@ -88,15 +88,15 @@ class Guard::TestSorbet < Minitest::Spec
     describe "##{method}" do
       let(:changed_paths) do
         [
-          "lib/guard/sorbet.rb",
+          "lib/guard/srb.rb",
           "test/test_helper.rb"
         ]
       end
-      subject { Guard::Sorbet.new(options).send(method, changed_paths) }
+      subject { Guard::Srb.new(options).send(method, changed_paths) }
 
       describe "when passed" do
         it "throws nothing" do
-          Guard::Sorbet::Runner.any_instance.expects(:run).returns(true)
+          Guard::Srb::Runner.any_instance.expects(:run).returns(true)
           assert_output do
             subject
           end
@@ -105,7 +105,7 @@ class Guard::TestSorbet < Minitest::Spec
 
       describe "when failed" do
         it "throws symbol :task_has_failed" do
-          Guard::Sorbet::Runner.any_instance.expects(:run).returns(false)
+          Guard::Srb::Runner.any_instance.expects(:run).returns(false)
           assert_throws(:task_has_failed) do
             assert_output do
               subject
@@ -116,7 +116,7 @@ class Guard::TestSorbet < Minitest::Spec
 
       describe "when an exception is raised" do
         it "prevents itself from firing" do
-          Guard::Sorbet::Runner.any_instance.expects(:run).raises(RuntimeError)
+          Guard::Srb::Runner.any_instance.expects(:run).raises(RuntimeError)
           assert_output do
             subject
           end
@@ -124,14 +124,14 @@ class Guard::TestSorbet < Minitest::Spec
       end
 
       it "inspects changed files with sorbet" do
-        Guard::Sorbet::Runner.any_instance.expects(:run)
+        Guard::Srb::Runner.any_instance.expects(:run)
         assert_output do
           subject
         end
       end
 
       it "passes cleaned paths to sorbet" do
-        Guard::Sorbet::Runner.any_instance.expects(:run).with do |actual|
+        Guard::Srb::Runner.any_instance.expects(:run).with do |actual|
           paths = changed_paths.map { |f| File.expand_path(f) }
           assert_equal(paths, actual)
         end
@@ -143,8 +143,8 @@ class Guard::TestSorbet < Minitest::Spec
 
       describe "when cleaned paths are empty" do
         it "does nothing" do
-          Guard::Sorbet.any_instance.stubs(:clean_paths).returns([])
-          Guard::Sorbet::Runner.any_instance.expects(:run).never
+          Guard::Srb.any_instance.stubs(:clean_paths).returns([])
+          Guard::Srb::Runner.any_instance.expects(:run).never
 
           assert_output do
             subject
@@ -161,7 +161,7 @@ class Guard::TestSorbet < Minitest::Spec
 
     it "converts to absolute paths" do
       paths = [
-        "lib/guard/sorbet.rb",
+        "lib/guard/srb.rb",
         "test/test_helper.rb"
       ]
       expanded_paths = paths.map { |f| File.expand_path(f) }
@@ -170,12 +170,12 @@ class Guard::TestSorbet < Minitest::Spec
 
     it "removes duplicated paths" do
       paths = [
-        "lib/guard/sorbet.rb",
+        "lib/guard/srb.rb",
         "test/test_helper.rb",
-        "lib/guard/../guard/sorbet.rb"
+        "lib/guard/../guard/srb.rb"
       ]
       clean = [
-        File.expand_path("lib/guard/sorbet.rb"),
+        File.expand_path("lib/guard/srb.rb"),
         File.expand_path("test/test_helper.rb")
       ]
       assert_equal(clean, clean_paths(paths))
@@ -183,12 +183,12 @@ class Guard::TestSorbet < Minitest::Spec
 
     it "removes non-existent paths" do
       paths = [
-        "lib/guard/sorbet.rb",
+        "lib/guard/srb.rb",
         "path/to/non_existent_file.rb",
         "test/test_helper.rb"
       ]
       clean = [
-        File.expand_path("lib/guard/sorbet.rb"),
+        File.expand_path("lib/guard/srb.rb"),
         File.expand_path("test/test_helper.rb")
       ]
       assert_equal(clean, clean_paths(paths))
@@ -196,12 +196,12 @@ class Guard::TestSorbet < Minitest::Spec
 
     it "removes paths which are included in another path" do
       paths = [
-        "lib/guard/sorbet.rb",
+        "lib/guard/srb.rb",
         "test/test_helper.rb",
         "test"
       ]
       clean = [
-        File.expand_path("lib/guard/sorbet.rb"),
+        File.expand_path("lib/guard/srb.rb"),
         File.expand_path("test")
       ]
       assert_equal(clean, clean_paths(paths))

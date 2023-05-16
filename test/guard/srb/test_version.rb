@@ -3,10 +3,10 @@
 
 require "test_helper"
 
-class Guard::Sorbet::TestSorbetVersion < Minitest::Spec
+class Guard::Srb::TestSrbVersion < Minitest::Spec
   describe "VERSION" do
     it "has version number" do
-      refute_nil ::Guard::SorbetVersion::VERSION
+      refute_nil ::Guard::SrbVersion::VERSION
     end
   end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    guard-sorbet (0.1.0)
+    guard-srb (0.1.0)
       guard (>= 2.16.0, < 3.0.0)
       sorbet
       sorbet-runtime
@@ -113,7 +113,7 @@ PLATFORMS
 
 DEPENDENCIES
   guard-minitest
-  guard-sorbet!
+  guard-srb!
   minitest
   mocha
   pry

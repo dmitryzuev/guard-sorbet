@@ -4,25 +4,25 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require "guard/sorbet/version"
+require "guard/srb/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "guard-sorbet"
-  spec.version = Guard::SorbetVersion::VERSION
+  spec.name = "guard-srb"
+  spec.version = Guard::SrbVersion::VERSION
   spec.authors = ["Dmitry Zuev"]
   spec.email = ["zuev@hey.com"]
 
   spec.summary = "Guard plugin for Sorbet"
-  spec.description = "Guard::Sorbet automatically checks Ruby typing with Sorbet when files are modified."
-  spec.homepage = "https://github.com/dmitryzuev/guard-sorbet"
+  spec.description = "Guard::Srb automatically checks Ruby typing with Sorbet when files are modified."
+  spec.homepage = "https://github.com/dmitryzuev/guard-srb"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/dmitryzuev/guard-sorbet"
-  spec.metadata["changelog_uri"] = "https://github.com/dmitryzuev/guard-sorbet/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/dmitryzuev/guard-srb"
+  spec.metadata["changelog_uri"] = "https://github.com/dmitryzuev/guard-srb/blob/main/CHANGELOG.md"
 
   spec.metadata["rubygems_mfa_required"] = "true"
 

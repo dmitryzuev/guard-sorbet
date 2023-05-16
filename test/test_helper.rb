@@ -9,4 +9,4 @@ require "mocha/minitest"
 require "guard"
 Guard.setup(notify: false, debug: false)
 
-require "guard/sorbet"
+require "guard/srb"

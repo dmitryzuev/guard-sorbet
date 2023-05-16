@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in guard-sorbet.gemspec
+# Specify your gem's dependencies in guard-srb.gemspec
 gemspec
 
 gem "guard-minitest", require: false

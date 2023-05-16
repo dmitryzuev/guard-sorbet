@@ -1,6 +1,6 @@
-# guard-sorbet
+# guard-srb
 
-**guard-sorbet** allows you to automatically typecheck Ruby code [Sorbet](https://sorbet.org) when files are modified.
+**guard-srb** allows you to automatically typecheck Ruby code [Sorbet](https://sorbet.org) when files are modified.
 
 Tested on MRI 2.7 - 3.2.
 
@@ -8,11 +8,11 @@ Tested on MRI 2.7 - 3.2.
 
 Please make sure to have [Guard](https://github.com/guard/guard) installed before continue.
 
-Add `guard-sorbet` to your `Gemfile`:
+Add `guard-srb` to your `Gemfile`:
 
 ```ruby
 group :development do
-  gem 'guard-sorbet'
+  gem 'guard-srb'
 end
 ```
 
@@ -25,13 +25,13 @@ $ bundle install
 or install it yourself as:
 
 ```sh
-$ gem install guard-sorbet
+$ gem install guard-srb
 ```
 
-Add the default Guard::Sorbet definition to your `Guardfile` by running:
+Add the default Guard::Srb definition to your `Guardfile` by running:
 
 ```sh
-$ guard init sorbet
+$ guard init srb
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ Please read the [Guard usage documentation](https://github.com/guard/guard#readm
 You can pass some options in `Guardfile` like the following example:
 
 ```ruby
-guard :sorbet, all_on_start: false, cli: ['--ignore=tmp/', '--ignore=vendor/'] do
+guard :srb, all_on_start: false, cli: ['--ignore=tmp/', '--ignore=vendor/'] do
   # ...
 end
 ```
@@ -81,7 +81,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dmitryzuev/guard-sorbet. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/dmitryzuev/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/dmitryzuev/guard-srb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/dmitryzuev/guard-srb/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -89,4 +89,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Guard::Sorbet project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/dmitryzuev/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Guard::Srb project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/dmitryzuev/guard-srb/blob/main/CODE_OF_CONDUCT.md).

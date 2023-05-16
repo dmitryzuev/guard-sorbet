@@ -22,7 +22,7 @@ Style/AccessModifierDeclarations:
 
 Style/FrozenStringLiteralComment:
   Exclude:
-    - lib/guard/sorbet/templates/Guardfile
+    - lib/guard/srb/templates/Guardfile
 
 Metrics/MethodLength:
   Max: 30

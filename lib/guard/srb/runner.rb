@@ -6,7 +6,7 @@ require "shellwords"
 require "open3"
 
 module Guard
-  class Sorbet
+  class Srb
     class Runner
       extend T::Sig
 
