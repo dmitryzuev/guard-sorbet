@@ -100,4 +100,4 @@ module Guard::Compat::UI
   end
 end
 
-module Guard::SorbetVersion; end
+module Guard::SrbVersion; end

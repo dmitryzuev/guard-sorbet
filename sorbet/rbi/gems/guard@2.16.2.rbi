@@ -1787,7 +1787,7 @@ Guard::Runner::PLUGIN_FAILED = T.let(T.unsafe(nil), String)
 # source://guard//lib/guard/runner.rb#35
 Guard::Runner::REMOVAL_TASKS = T.let(T.unsafe(nil), Array)
 
-module Guard::SorbetVersion; end
+module Guard::SrbVersion; end
 
 # source://guard//lib/guard/terminal.rb#4
 class Guard::Terminal

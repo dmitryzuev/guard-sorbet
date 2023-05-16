@@ -3,8 +3,8 @@
 
 require "guard"
 require "guard/plugin"
-require "guard/sorbet"
-require "guard/sorbet/version"
+require "guard/srb"
+require "guard/srb/version"
 require "minitest/autorun"
 require "minitest/test_task"
 require "mocha/minitest"

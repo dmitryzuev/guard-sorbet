@@ -296,4 +296,4 @@ class Guard::MinitestVersion; end
 # source://guard-minitest//lib/guard/minitest/version.rb#3
 Guard::MinitestVersion::VERSION = T.let(T.unsafe(nil), String)
 
-module Guard::SorbetVersion; end
+module Guard::SrbVersion; end
