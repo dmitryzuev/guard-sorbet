@@ -20,6 +20,10 @@ Style/ClassAndModuleChildren:
 Style/AccessModifierDeclarations:
   EnforcedStyle: inline
 
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - lib/guard/sorbet/templates/Guardfile
+
 Metrics/MethodLength:
   Max: 30
 

@@ -1,0 +1,3 @@
+guard :sorbet do
+  watch(/.+\.rb$/)
+end
