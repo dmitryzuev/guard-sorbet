@@ -1,6 +1,7 @@
 # guard-srb
 
 [![Gem Version](https://badge.fury.io/rb/guard-srb.svg)](https://badge.fury.io/rb/guard-srb)
+![Github workflow](https://github.com/dmitryzuev/guard-srb/actions/workflows/main.yml/badge.svg)
 
 **guard-srb** allows you to automatically typecheck Ruby code [Sorbet](https://sorbet.org) when files are modified.
 
