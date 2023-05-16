@@ -2,6 +2,10 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "guard/sorbet"
 
 require "minitest/autorun"
+
+require "guard"
+Guard.setup(notify: false)
+
+require "guard/sorbet"

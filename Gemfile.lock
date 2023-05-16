@@ -23,6 +23,10 @@ GEM
       pry (>= 0.9.12)
       shellany (~> 0.0)
       thor (>= 0.18.1)
+    guard-compat (1.2.1)
+    guard-minitest (2.4.6)
+      guard-compat (~> 1.2)
+      minitest (>= 3.0)
     json (2.6.3)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -103,6 +107,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  guard-minitest
   guard-sorbet!
   minitest
   pry

@@ -1,4 +1,13 @@
 # typed: true
 # frozen_string_literal: true
 
-# Add your extra requires here (`bin/tapioca require` can be used to bootstrap this list)
+require "guard"
+require "guard/plugin"
+require "guard/sorbet"
+require "guard/sorbet/version"
+require "minitest/autorun"
+require "open3"
+require "shellwords"
+require "sorbet-runtime"
+require "rubocop/rake_task"
+require "rake/testtask"

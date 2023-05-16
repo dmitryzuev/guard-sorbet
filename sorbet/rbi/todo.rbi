@@ -4,5 +4,4 @@
 
 # typed: false
 
-module ::Launchy; end
 module URI::Escape; end
