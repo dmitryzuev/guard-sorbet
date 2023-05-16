@@ -79,6 +79,7 @@ GEM
     sorbet-runtime (0.5.10827)
     sorbet-static (0.5.10827-universal-darwin-20)
     sorbet-static (0.5.10827-universal-darwin-22)
+    sorbet-static (0.5.10827-x86_64-linux)
     sorbet-static-and-runtime (0.5.10827)
       sorbet (= 0.5.10827)
       sorbet-runtime (= 0.5.10827)
@@ -108,6 +109,7 @@ GEM
 PLATFORMS
   -darwin-20
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   guard-minitest
