@@ -1,24 +1,77 @@
-# Guard::Sorbet
+# guard-sorbet
 
-TODO: Delete this and the text below, and describe your gem
+**guard-sorbet** allows you to automatically typecheck Ruby code [Sorbet](https://sorbet.org) when files are modified.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/sorbet`. To experiment with that code, run `bin/console` for an interactive prompt.
+Tested on MRI 2.7 - 3.2.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Please make sure to have [Guard](https://github.com/guard/guard) installed before continue.
 
-Install the gem and add to the application's Gemfile by executing:
+Add `guard-sorbet` to your `Gemfile`:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+group :development do
+  gem 'guard-sorbet'
+end
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+and then execute:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```sh
+$ bundle install
+```
+
+or install it yourself as:
+
+```sh
+$ gem install guard-sorbet
+```
+
+Add the default Guard::Sorbet definition to your `Guardfile` by running:
+
+```sh
+$ guard init sorbet
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Please read the [Guard usage documentation](https://github.com/guard/guard#readme).
+
+## Options
+
+You can pass some options in `Guardfile` like the following example:
+
+```ruby
+guard :sorbet, all_on_start: false, cli: ['--ignore=tmp/', '--ignore=vendor/'] do
+  # ...
+end
+```
+
+### Available Options
+
+```ruby
+all_on_start: true     # Check all files at Guard startup.
+                       #   default: true
+cli: '--ignore=tmp/'   # Pass arbitrary Sorbet CLI arguments.
+                       # An array or string is acceptable.
+                       #   default: nil
+cmd: './bin/srb'       # Pass custom cmd to run sorbet.
+                       #   default: srb
+
+hide_stdout: false     # Do not display console output (in case outputting to file).
+                       #   default: false
+notification: :failed  # Display Growl notification after each run.
+                       #   true    - Always notify
+                       #   false   - Never notify
+                       #   :failed - Notify only when failed
+                       #   default: :failed
+config: true           # Use default config at `sorbet/config`
+                       #   default: false
+colorize: "auto"       # Colorize sorbet output
+                       # One of "always", "auto", "never"
+                       #   default: "always"
+```
 
 ## Development
 
@@ -28,7 +81,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/guard-sorbet. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/dmitryzuev/guard-sorbet. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/dmitryzuev/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +89,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Guard::Sorbet project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Guard::Sorbet project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/dmitryzuev/guard-sorbet/blob/main/CODE_OF_CONDUCT.md).
