@@ -7,6 +7,7 @@ gemspec
 
 gem "guard-minitest", require: false
 gem "minitest"
+gem "mocha"
 gem "pry"
 gem "rake"
 gem "rubocop"

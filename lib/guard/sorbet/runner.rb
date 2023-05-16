@@ -16,7 +16,7 @@ module Guard
         @args_specified_by_user = T.let(nil, T.nilable(T::Array[String]))
       end
 
-      sig { params(paths: T::Array[String]).returns([String, T::Boolean]) }
+      sig { params(paths: T::Array[String]).returns(T::Boolean) }
       def run(paths = [])
         command = build_command(paths)
         result, status = T.unsafe(Open3).capture2e(*command)
@@ -30,7 +30,7 @@ module Guard
 
         warn(result) unless @options[:hide_stdout]
 
-        [result, status.success?]
+        status.success?
       end
 
       sig { params(paths: T::Array[String]).returns(T::Array[String]) }

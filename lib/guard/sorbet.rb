@@ -63,7 +63,7 @@ module Guard
     sig { params(paths: T::Array[String]).returns(T.untyped) }
     private def inspect_with_sorbet(paths = [])
       runner = Runner.new(@options)
-      _result, passed = runner.run(paths)
+      passed = runner.run(paths)
 
       throw :task_has_failed unless passed
     rescue StandardError => e
