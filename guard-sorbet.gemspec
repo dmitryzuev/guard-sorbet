@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.name = "guard-sorbet"
   spec.version = Guard::SorbetVersion::VERSION
   spec.authors = ["Dmitry Zuev"]
-  spec.email = ["mail@dmitryzuev.com"]
+  spec.email = ["zuev@hey.com"]
 
   spec.summary = "Guard plugin for Sorbet"
   spec.description = "Guard::Sorbet automatically checks Ruby typing with Sorbet when files are modified."
